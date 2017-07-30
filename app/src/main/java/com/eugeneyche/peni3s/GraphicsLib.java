@@ -8,6 +8,7 @@ public class GraphicsLib {
     public static native void onSurfaceChanged(int width, int height);
     public static native void onDrawFrame();
     public static native void loadModelFromString(String str);
+    public static native void onFrame(int width, int height, byte[] frame);
     public static native void onPan(float x, float y);
     public static native void onRotate(float x, float y);
     public static native void onScale(float amount);

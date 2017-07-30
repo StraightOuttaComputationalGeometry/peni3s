@@ -2,6 +2,7 @@ package com.eugeneyche.peni3s;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.hardware.Camera;
 import android.opengl.GLSurfaceView;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
@@ -12,7 +13,7 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 
-public class GraphicsView extends GLSurfaceView {
+public class GraphicsView extends GLSurfaceView implements Camera.PreviewCallback{
 
     private float startX;
     private float startY;

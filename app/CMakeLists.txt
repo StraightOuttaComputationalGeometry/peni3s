@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 3.4.1)
 
-include_directories( src/main/cpp/glm )
 
-set(GLM_FORCE_CXX98 ON)
+include_directories( /opt/opencv-android-sdk/sdk/native/jni/include )
+add_library( lib_opencv SHARED IMPORTED )
+set_target_properties(lib_opencv PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libopencv_java3.so)
 
 add_library( graphics
              SHARED
@@ -20,4 +21,5 @@ find_library( log-lib
 target_link_libraries( graphics
                        ${log-lib}
                        GLESv3
+                       lib_opencv
                        )
